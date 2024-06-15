@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: integracao_ghelere
+
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    default-property-inclusion: non_null
+    deserialization:
+      fail-on-null-for-primitives: true
+
+  profiles:
+    active: ${SCOPE:stage}
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+api:
+  app:
+    jwtSecret: ${SECRET:45da2ed9f455817623087c49390b2ab9e4d38421c20f5a282a877f8e6662c67b361a0f7bd810cbca8e471e183c41d9a648b057aed0369b67078c6d73e38d}
+    jwtExpirationMs: 86400000

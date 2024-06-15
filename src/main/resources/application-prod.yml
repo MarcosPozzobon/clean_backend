@@ -1,0 +1,32 @@
+server:
+  port: 9000
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  datasource:
+    url: ${DATABASE_CONNECTION_URL}
+    username: ${USER}
+    password: ${PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: false
+
+  h2:
+    console:
+      enabled: false
+
+springdoc:
+  api-docs:
+    enabled: false
+
+front:
+  url: https://freebills.wavods.com/dashboard
